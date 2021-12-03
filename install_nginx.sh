@@ -19,3 +19,10 @@ echo """
 """ > /usr/share/nginx/html/index.html
 systemctl start nginx
 systemctl enable nginx
+
+# MySQL Client
+yum install -y mysql 
+# Redis CLI
+yum install -y gcc wget
+wget http://download.redis.io/redis-stable.tar.gz && tar xvzf redis-stable.tar.gz && cd redis-stable && make
+cp src/redis-cli /usr/bin/
